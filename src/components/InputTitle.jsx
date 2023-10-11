@@ -1,14 +1,18 @@
 import React from "react";
-import { useState } from "react";
 
-const InputTitle = () => {
-    const [text, setText] = useState('');
+const InputTitle = (props) => {
+    const handleSearch = () => {
+        props.handleSearch();
+    }
+
+    const handleChange = (e) => {
+        props.handleChangeText(e.target.value);
+    }
+
     return (
         <div>
-            <form action="" method="GET">
-                <input type="text" value={text} />
-                <button type="submit">検索</button>
-            </form>
+            <input type="text" value={props.text} onChange={handleChange} />
+            <button type="submit" onClick={handleSearch}>検索</button>
         </div>
     )
 }

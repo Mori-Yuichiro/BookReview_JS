@@ -1,7 +1,7 @@
 import React from "react";
 
 const BookResults = ({ bookresults }) => {
-    console.log(bookresults);
+    // console.log(bookresults);
     return (
         <div>
             {
