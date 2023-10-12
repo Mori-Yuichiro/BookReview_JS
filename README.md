@@ -18,7 +18,7 @@ Tailwindcss 3.3.3
 npm install
 ```
 
-3. コマンドの実行完了後、以下のコマンドを入力し、アプリを起動
+3. コマンドの実行完了後、App.jsxのhandleSearch関数内にある${APP_ID}を取得したアプリケーションIDに書き換えて以下のコマンドを入力し、アプリを起動
 ```
 npm start
 ```
