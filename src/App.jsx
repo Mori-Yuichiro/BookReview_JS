@@ -4,12 +4,9 @@ import InputTitle from "./components/InputTitle.jsx";
 import './App.css';
 
 
-const APP_ID = process.env.REACT_APP_ID;
-console.log(APP_ID);
-
-// const URL = `https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?format=json&title=小学館の図鑑NEO〔新版〕 動物 DVDつき&applicationId=${APP_ID}`;
-// const URL = `https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?format=json&title=陰の実力者&applicationId=${APP_ID}`;
-
+// const APP_ID = process.env.REACT_APP_ID;
+const APP_ID = import.meta.env.VITE_APP_ID;
+// console.log(APP_ID);
 
 function App() {
   const [books, setBooks] = useState([]);

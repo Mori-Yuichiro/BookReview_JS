@@ -11,8 +11,8 @@ const InputTitle = (props) => {
 
     return (
         <div>
-            <input type="text" value={props.text} onChange={handleChange} />
-            <button type="submit" onClick={handleSearch}>検索</button>
+            <input className="outline mr-3 my-4" type="text" size="50" value={props.text} onChange={handleChange} />
+            <button className="outline px-3 bg-slate-300" type="submit" onClick={handleSearch}>検索</button>
         </div>
     )
 }
