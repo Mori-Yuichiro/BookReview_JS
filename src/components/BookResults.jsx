@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const BookResults = ({ bookresults }) => {
     // console.log(bookresults);
@@ -13,7 +14,7 @@ const BookResults = ({ bookresults }) => {
                             </a>
                             <div className="mb-8">
                                 <h1 className="text-start">{book.Item.title}</h1>
-                                <h2 className="w-40">{book.Item.itemPrice}円</h2>
+                                <h2 className="w-40">{book.Item.itemPrice}円<Link to="/comment">コメントを書く</Link></h2>
                             </div>
                         </div>
                 ))
