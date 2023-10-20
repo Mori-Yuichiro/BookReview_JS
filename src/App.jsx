@@ -40,7 +40,7 @@ function App() {
             <BookResults bookresults={books} />
           </div>
         } />
-        <Route path="/comment" element={<Comment />} />
+        <Route path="/comment/:isbn" element={<Comment />} />
       </Routes>
 
     </div>
