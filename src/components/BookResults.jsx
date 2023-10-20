@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const BookResults = ({ bookresults }) => {
-    // console.log(bookresults);
+    const [commentData, setCommentData] = useState([]);
+    useEffect(() => {
+        axios.get("http://127.0.0.1:3000").then((response) => {
+            setCommentData(response.data);
+        });
+    }, [bookresults]);
+
+
     return (
         <div className="my-6 mr-8">
             {
@@ -13,8 +22,11 @@ const BookResults = ({ bookresults }) => {
                             </a>
                             <div className="mb-8">
                                 <h1 className="text-start">{book.Item.title}</h1>
-                                <h2 className="w-40">{book.Item.itemPrice}円</h2>
+                                <h2 className="w-40">{book.Item.itemPrice}円<Link to={"/comment/" + book.Item.isbn} state={{ title: book.Item.title }} >コメントを書く</Link></h2>
                             </div>
+                            {commentData.map((comment, index) => (
+                                book.Item.isbn === comment.isbn && <div key={index}>{comment.comments}</div>
+                            ))}
                         </div>
                 ))
             }
